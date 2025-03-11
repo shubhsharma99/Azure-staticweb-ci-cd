@@ -14,8 +14,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Azure CLI
-        uses: azure/setup-cli@v1
+      - name: Install Azure CLI
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
       - name: Deploy to Azure Blob Storage
         run: |
